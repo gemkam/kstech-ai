@@ -1,19 +1,11 @@
-<script>
-  (function(d, t) {
-    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/index.js"; // Latest SDK link
-    g.defer = true; g.async = true;
-    s.parentNode.insertBefore(g, s);
-
-    g.onload = function() {
-      const vapiInstance = window.vapiSDK;
-      
-      document.getElementById('vapi-btn').addEventListener('click', () => {
-        vapiInstance.start({
-          apiKey: "56d913d4-33f6-4964-8378-4cb3e2efd7cb", 
-          assistantId: "2ecb36cd-da73-4f4f-be6c-d61ab5d91ba7", // Sirf ID rakhein
-        });
-      });
-    };
-  })(document, "script");
-</script>
+g.onload = function() {
+  // Check karein ke widget load hua hai
+  const vapi = window.vapiSDK || window.Vapi; 
+  
+  document.getElementById('vapi-btn').addEventListener('click', () => {
+    vapi.run({
+      apiKey: "56d913d4-33f6-4964-8378-4cb3e2efd7cb", 
+      assistantId: "2ecb36cd-da73-4f4f-be6c-d61ab5d91ba7", 
+    });
+  });
+};
